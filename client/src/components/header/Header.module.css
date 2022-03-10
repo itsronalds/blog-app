@@ -1,0 +1,52 @@
+.nav {
+  background: #3b82f6;
+
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+
+  height: 0;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+
+  display: grid;
+  grid-template-rows: repeat(2, 80px);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.nav li {
+  text-align: center;
+}
+
+.nav a {
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .nav.open {
+    height: calc(100vh - 60px);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .navIcon {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+
+    height: auto;
+    opacity: 1;
+    pointer-events: all;
+
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    column-gap: 2rem;
+  }
+}
