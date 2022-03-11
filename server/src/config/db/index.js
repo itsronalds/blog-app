@@ -1,25 +1,32 @@
 import mysql from 'mysql';
+import dotenv from 'dotenv';
 import { promisify } from 'util';
 
+dotenv.config();
+
 const DB_CONFIG = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
+  host: 'localhost',
+  user: 'root',
+  password: '01071998',
+  database: 'blog',
   port: process.env.DB_PORT,
   charset: 'utf8mb4',
 };
 
-const connection = mysql.createConnection(DB_CONFIG);
+const dbConnection = mysql.createPool(DB_CONFIG);
 
-connection.connect((err) => {
+dbConnection.getConnection((err, connection) => {
   if (err) {
-    throw new Error('DB connection error');
+    return console.log(err);
+  }
+
+  if (connection) {
+    connection.release();
   }
 
   console.log('DB is connected!');
 });
 
-const dbQuery = promisify(connection.query).bind(connection);
+const dbQuery = promisify(dbConnection.query).bind(dbConnection);
 
 export default dbQuery;

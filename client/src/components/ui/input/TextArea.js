@@ -1,17 +1,16 @@
-const Input = ({ className, style, type, name, placeholder, defaultValue = '', register }) => {
+const TextArea = ({ className, style, name, placeholder, register }) => {
   const classes = `w-full p-2.5 outline-0 rounded border-2 border-gray-100 text-sm transition-all focus:border-blue-500 ${className}`;
 
   return (
-    <input
+    <textarea
       className={classes}
       style={style}
-      type={type}
       name={name}
       placeholder={placeholder}
-      defaultValue={defaultValue}
       {...(register && register(name))}
+      rows={8}
     />
   );
 };
 
-export default Input;
+export default TextArea;

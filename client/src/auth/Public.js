@@ -1,17 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useAuthContext } from '../context/AuthContext';
+
 import Header from '../components/header';
 import SignUp from '../routes/signup';
+import LogIn from '../routes/login';
 
-const Public = () => (
-  <Router>
-    <Header />
+const Public = () => {
+  const { isAuth } = useAuthContext();
 
-    <Routes>
-      <Route path="/" element={<div></div>} />
+  if (isAuth) {
+    return window.location('/home');
+  }
 
-      <Route path="/signup" element={<SignUp />} />
-    </Routes>
-  </Router>
-);
+  return (
+    <Router>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<LogIn />} />
+
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default Public;

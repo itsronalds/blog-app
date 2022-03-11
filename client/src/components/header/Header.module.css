@@ -49,4 +49,8 @@
     grid-template-columns: repeat(2, auto);
     column-gap: 2rem;
   }
+
+  .nav.isAuth {
+    grid-template-columns: repeat(4, auto);
+  }
 }

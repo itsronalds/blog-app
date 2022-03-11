@@ -5,6 +5,10 @@ import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 import cors from 'cors';
 
+import authRoute from '../route/auth';
+import postRoute from '../route/private/post';
+import profileRoute from '../route/private/profile';
+
 class Server {
   constructor() {
     this.dotenv = dotenv.config();
@@ -12,7 +16,7 @@ class Server {
     this.server = express();
     this.port = process.env.PORT || process.env.SERVER_PORT;
 
-    this.db = require('../config/db');
+    this.cloudinary = require('../config/cloudinary');
   }
 
   middlewares() {
@@ -31,7 +35,11 @@ class Server {
     this.server.use(express.json());
   }
 
-  routes() {}
+  routes() {
+    this.server.use('/api/auth', authRoute);
+    this.server.use('/api/post', postRoute);
+    this.server.use('/api/profile', profileRoute);
+  }
 
   execute() {
     this.middlewares();
