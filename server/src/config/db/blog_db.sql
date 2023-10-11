@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: blog
+-- Host: localhost    Database: blog_db
 -- ------------------------------------------------------
--- Server version	8.0.28
+-- Server version	8.0.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,7 +41,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,1,'Hola','Que más','https://res.cloudinary.com/drycaa0bz/image/upload/v1646955539/blog/posts/tyoemkarr6tjtmuodkfz.jpg','2022-03-10 23:38:59'),(2,2,'React','React JS','https://res.cloudinary.com/drycaa0bz/image/upload/v1646957040/blog/posts/wcs6i7wcgmmicbbxrak5.png','2022-03-11 00:04:00');
+INSERT INTO `posts` VALUES (1,1,'React Library','React is a framework that employs Webpack to automatically compile React, JSX, and ES6 code while handling CSS file prefixes. React is a JavaScript-based UI development library. Although React is a library rather than a language, it is widely used in web development. The library first appeared in May 2013 and is now one of the most commonly used frontend libraries for web development.\r\n\r\nReact offers various extensions for entire application architectural support, such as Flux and React Native, beyond mere UI.','https://res.cloudinary.com/drycaa0bz/image/upload/v1696992622/blog/posts/vp41lqyexuudcpuhn6wx.png','2023-10-11 02:50:22'),(2,1,'Rick and Morty Series','Whenever I am asked to explain the appeal of “Rick and Morty,” I propose a thought experiment.\r\n\r\nImagine that you grew up with the world’s tragedies being beamed into your living room by 24-hour cable news. Your country has been at war for much your lifetime. You graduated college with a huge amount of debt, and you entered the work force during the recent financial crisis. Imagine, too, that the world’s ecological crisis weighs heavily on your mind and that you spend as much time on the internet as you do speaking to real human beings.\r\n\r\nIf you were this sort of person, what television show would resonate with you?\r\n\r\n“Rick and Morty,” the Adult Swim animated comedy by Justin Roiland and Dan Harmon, just might be the answer.\r\n\r\nIt is dark, even to the point of being nihilistic; it is absurdist; and it operates less like a novel or serial drama and more like a meme or internet video. It also speaks to the sense of alienation, anxiety and skepticism that it not uncommon among younger Americans today.\r\n\r\nAnd it has just been renewed for 70 episodes. Adult Swim announced last week that as a part of an overall deal with the series creators, “Rick and Morty,” which numbers 31 episodes in its first three seasons, will return for more than double that number.','https://res.cloudinary.com/drycaa0bz/image/upload/v1696992934/blog/posts/e2vureekoaeltkirnhpx.jpg','2023-10-11 02:55:35');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +62,7 @@ CREATE TABLE `users` (
   `userPhoto` text,
   `createdAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`IDUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'ronald ','abu saleh','M','lancerrnld@gmail.com','$2b$10$YZdta3uS6UcBscY.LWqQHeBnP86x4nHvDNMS1HV1cLKQFqJC0heEC','https://res.cloudinary.com/drycaa0bz/image/upload/v1646947322/blog/users/yn1hgeoq1arwu8thfsu4.jpg','2022-03-10 21:22:02'),(2,'Jack','Brack A','M','jack@gmail.com','$2b$10$V/b9bmZO9Z89esBsXXpnT.Iz7vGwoD4/MvzYMqL1Dl4gRHf0K9yjy','https://res.cloudinary.com/drycaa0bz/image/upload/v1646957001/blog/users/gisssuyf42vjyqbecrzt.jpg','2022-03-11 00:03:21');
+INSERT INTO `users` VALUES (1,'Ronald','Abu Saleh','M','ronaldabusaleh@gmail.com','$2b$10$bkksZ65Ndv7b/54KEv4ERuNqZGqtS8xPhL5rW3n.kekrqEC7qhDyK','https://res.cloudinary.com/drycaa0bz/image/upload/v1696992481/blog/users/qlmxdkhhecwnps9oyl5i.jpg','2023-10-11 02:48:02');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -84,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-10 21:54:32
+-- Dump completed on 2023-10-10 23:23:03
