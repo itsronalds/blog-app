@@ -1,1 +1,1 @@
-# EQUALDATA Test
+# blog-app
